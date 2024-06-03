@@ -1,3 +1,5 @@
+using Chatbot;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//
+Configuration configuration = new Configuration(builder.Configuration["AIKey"]);
+
+builder.Services.AddSingleton(configuration);
 
 var app = builder.Build();
 
