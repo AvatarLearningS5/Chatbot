@@ -6,6 +6,7 @@ namespace Chatbot.Controllers
     [Route("/conversation")]
     public class ConversationController : Controller
     {
+        //dependency injection
         private Configuration _configuration;
         public ConversationController(Configuration configuration) 
         {
